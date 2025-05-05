@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
-from .forms import AuthorizationForm
 from django.views.generic.edit import FormMixin
-from django.contrib.auth import authenticate, login
-
+from django.contrib.auth import login
+from django.contrib.auth.models import User
+from .forms import AuthorizationForm
 # Create your views here.
 
 class AuthorizationView(TemplateView, FormMixin):
@@ -19,12 +19,18 @@ class AuthorizationView(TemplateView, FormMixin):
         form = self.get_form()
         email = request.POST.get("email")
         password = request.POST.get("password")
-        
+        print(email, password)
         if form.is_valid():
-            user = authenticate(request=request, password=password)
-            if user:
-                login(request=request, user=user)
-                print("qqqqqq")
+            try:
+                user = User.objects.get(email=email)
+                if user.check_password(password):
+                    
+                    login(request, user)
+
+                else:
+                    user = None
+            except User.DoesNotExist:
+                user = None
         return render(request, self.template_name, {'auth_form': AuthorizationForm()})
 
         

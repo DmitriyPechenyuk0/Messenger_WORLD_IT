@@ -18,11 +18,12 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 from . import settings
+from authorization_app.views import AuthorizationView
 from registration_app.views import RegistrationView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('registration/', RegistrationView.as_view())
-]
-
+    path('registration/', RegistrationView.as_view()),
+    path('authorization/', AuthorizationView.as_view())]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

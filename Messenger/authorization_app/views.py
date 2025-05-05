@@ -19,11 +19,13 @@ class AuthorizationView(TemplateView, FormMixin):
         form = self.get_form()
         email = request.POST.get("email")
         password = request.POST.get("password")
+        
         if form.is_valid():
             user = authenticate(request=request, password=password)
             if user:
                 login(request=request, user=user)
                 print("qqqqqq")
+        return render(request, self.template_name, {'auth_form': AuthorizationForm()})
 
         
             

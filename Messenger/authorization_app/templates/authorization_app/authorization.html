@@ -1,10 +1,9 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block main %}
+ <form method="post">
+    {% csrf_token %}
+    {{ auth_form.as_div }}
     
-</body>
-</html>
+    <button type="submit"></button>
+ </form>
+(% endblock %)

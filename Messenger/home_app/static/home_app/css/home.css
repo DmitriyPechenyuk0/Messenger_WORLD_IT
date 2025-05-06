@@ -9,6 +9,7 @@
     gap: 8px;
 }
 .fixed-left-panel{
+    position: fixed;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -302,6 +303,7 @@
 .unfixed-right-panel{
     display: flex;
     width: 923px;
+    margin-left: 366.67px;
     height: fit-content;
     margin-top: 16px;
     gap: 8px;

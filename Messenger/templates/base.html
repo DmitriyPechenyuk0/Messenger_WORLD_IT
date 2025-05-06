@@ -8,19 +8,21 @@
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
     </head>
     <body>
-        <header>
-            <img class="logo" src="{% static 'img/Logo.png' %}">
-            <div class="links">
-                <nav class="inside-links">
-                    <a class="link" href=""><img class="link-picture" src="{% static 'img/House.png' %}"><p>Головна</p></a>
-                    <a class="link" href=""><img class="link-picture" src="{% static 'img/mypub.png' %}"><p>Мої публікації</p></a>
-                    <a class="link" href=""><img class="link-picture" src="{% static 'img/people.png' %}"><p>Друзі</p></a>
-                    <a class="link" href=""><img class="link-picture" src="{% static 'img/chat.png' %}"><p>Чати</p></a>
-                    <a class="link" href=""><img class="link-picture" src="{% static 'img/Setting.png' %}"><p>Налаштування</p></a>
-                </nav>
-                <a class="link-log-out" href="/log-out"><img src="{% static 'img/exit.png' %}"><p>Вихід</p></a>
-            </div>
-        </header>
+        <div class="header-div" >
+            <header>
+                <img class="logo" src="{% static 'img/Logo.png' %}">
+                <div class="links">
+                    <nav class="inside-links">
+                        <a class="link" href=""><img class="link-picture" src="{% static 'img/House.png' %}"><p>Головна</p></a>
+                        <a class="link" href=""><img class="link-picture" src="{% static 'img/mypub.png' %}"><p>Мої публікації</p></a>
+                        <a class="link" href=""><img class="link-picture" src="{% static 'img/people.png' %}"><p>Друзі</p></a>
+                        <a class="link" href=""><img class="link-picture" src="{% static 'img/chat.png' %}"><p>Чати</p></a>
+                        <a class="link" href=""><img class="link-picture" src="{% static 'img/Setting.png' %}"><p>Налаштування</p></a>
+                    </nav>
+                    <a class="link-log-out" href="/log-out"><img src="{% static 'img/exit.png' %}"><p>Вихід</p></a>
+                </div>
+            </header>
+        </div>
         <main>
             {% block main %} {% endblock %}
         </main>

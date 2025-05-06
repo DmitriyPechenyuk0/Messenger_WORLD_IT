@@ -395,7 +395,7 @@
 }
 .social-post{
     width: 923px;
-    height: 897px;
+    height: fit-content;
     border: 1px solid #CDCED2;
     border-radius: 10px;
     background-color: #FFFFFF;
@@ -460,4 +460,93 @@
 }
 .social-post-dots:hover{
     cursor: pointer;
+}
+.social-post-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 16px;
+    padding: 16px 20px;
+    width: 923px;
+    height: fit-content;
+}
+.social-post-info-text span{
+    width: 638px;
+    height: fit-content ;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #070A1C;
+}
+.social-post-info-text span p{
+    color: #543C52;
+}
+.social-post-info-photos{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: fit-content;
+    height: fit-content;
+}
+.social-post-info-photos-group-1{
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    flex-direction: row;
+    gap: 16px;
+
+}
+.social-post-info-photos-group-1 img{
+    width: 433px;
+    height: 327px;
+}
+.social-post-info-photos-group-2{
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    flex-direction: row;
+    gap: 16px;
+
+}
+.social-post-info-photos-group-2 img{
+    width: 283.67px;
+    height: 327px;
+}
+.social-post-info-stats{
+    display: flex;
+    width: 883px;
+    height: 20px;
+    gap:24px;
+    flex-direction: row;
+
+
+}
+.social-post-info-stat-likes{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    width: fit-content;
+    height: fit-content;
+    
+}
+.social-post-info-stat-views{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    width: fit-content;
+    height: fit-content;
+}
+.social-post-info-stat-likes img,
+ .social-post-info-stat-views img{
+    width: 20px;
+}
+.social-post-info-stat-likes p,
+.social-post-info-stat-views p{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.6%;
+    color: #070A1C;
 }

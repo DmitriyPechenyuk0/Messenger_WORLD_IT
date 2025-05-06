@@ -11,6 +11,12 @@
     font-weight: 700;
     font-style: normal
 }
+@font-face {
+    font-family: GT Walsheim Pro;
+    src: url(../fonts/GTWalsheimPro-Medium.ttf) format("truetype");
+    font-weight: 500;
+    font-style: normal
+}
 *{
     padding: 0px;
     margin: 0px;
@@ -35,6 +41,15 @@ header{
     justify-content: space-between;
     align-items: center;
     background-color: #ffffff;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background-color: #FAF8FF;
+    width: 100vw;
+    height: 100vh;
 }
 .logo{
     width: 145px;
@@ -70,6 +85,7 @@ header{
     line-height: 100%;
     letter-spacing: -1%;
     text-align: center;
+    font-weight: 500;
 }
 .link-picture{
     width: 20px;

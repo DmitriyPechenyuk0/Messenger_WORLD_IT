@@ -36,9 +36,114 @@
                 </div>
             </div>
         </div>
+        <div class="user-requests">
+            <div class="user-requests-titles">
+                <a class="user-requests-link" href="/requests">
+                    <img src="{% static 'home_app/img/people-requests.png' %}">
+                    <p class="user-requests-link-requests">Запити</p>
+                </a>
+                <a class="user-requests-link" href="/requests">
+                    <p class="user-requests-links-show-all" >Дивитись всі</p>
+                </a>
+            </div>
+            <div class="user-requests-peoples">
+                <div class="user-requests-people">
+                    <img src="{% static 'home_app/img/Avatar.png' %}">
+                    <div class="user-requests-people-stats" >
+                        <p class="user-requests-people-name" >Yehor Aungh</p>
+                        <p class="user-requests-people-followers" >4.3к підписників</p>
+                    </div>
+                </div>
+                <div class="user-requests-people">
+                    <img src="{% static 'home_app/img/Avatar2.png' %}">
+                    <div class="user-requests-people-stats" >
+                        <p class="user-requests-people-name" >Ann Ann</p>
+                        <p class="user-requests-people-followers" >1.6к підписників</p>
+                    </div>
+                </div>
+                <div class="user-requests-people">
+                    <img src="{% static 'home_app/img/Avatar3.png' %}">
+                    <div class="user-requests-people-stats" >
+                        <p class="user-requests-people-name" >Yeugen Jenua</p>
+                        <p class="user-requests-people-followers" >10.3к підписників</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="user-messages">
+            <div class="user-messages-titles">
+                <a class="user-messages-title-messages" href="">
+                    <img src="{% static 'home_app/img/chat.png' %}">
+                    <p class="" >Повідомлення</p>
+                </a>
+                <a class="user-messages-title-see-all" href="">
+                    <p>Дивитись всі</p>
+                </a>
+            </div>
+            <div class="user-messages-peoples">
+                <div class="user-messages-people message-checked">
+                    <div class="user-messages-people-inner">
+                        <img src="{% static 'home_app/img/Avatar4.png' %}">
+                        <div class="user-messages-people-inner-content">
+                            <div class="user-messages-people-inner-content-name-time">
+                                <p class="user-messages-people-inner-content-name" >Mona Lisa</p>
+                                <p class="user-messages-people-inner-content-time" >09:41</p>
+                            </div>
+                            <div class="user-messages-people-inner-content-message">
+                                <p>Привіт! Як справи?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-messages-people message-checked">
+                    <div class="user-messages-people-inner">
+                        <img src="{% static 'home_app/img/Avatar5.png' %}">
+                        <div class="user-messages-people-inner-content">
+                            <div class="user-messages-people-inner-content-name-time">
+                                <p class="user-messages-people-inner-content-name" >Ann Ti</p>
+                                <p class="user-messages-people-inner-content-time" >25.04.2025</p>
+                            </div>
+                            <div class="user-messages-people-inner-content-message">
+                                <p>Привіт!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-messages-people ">
+                    <div class="user-messages-people-inner">
+                        <img src="{% static 'home_app/img/Avatar6.png' %}">
+                        <div class="user-messages-people-inner-content">
+                            <div class="user-messages-people-inner-content-name-time">
+                                <p class="user-messages-people-inner-content-name" >Ness Ty</p>
+                                <p class="user-messages-people-inner-content-time" >25.04.2025</p>
+                            </div>
+                            <div class="user-messages-people-inner-content-message">
+                                <p>Привіт!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </aside>
+    <div class="unfixed-right-panel" >
+        <div class="fast-message">
+            <div class="fast-message-content">
+                <input class="fast-message-content-input" type="text" placeholder="Про що ти зараз думаєш?">
+                <div class="fast-message-content-buttons">
+                    <button class="fast-message-content-button" type="button"><img src="{% static 'home_app/img/picture.png' %}"></button>
+                    <button class="fast-message-content-button" type="button"><img src="{% static 'home_app/img/emodji.png' %}"></button>
+                    <button class="fast-message-content-button" type="button">
+                        <p>Публікація</p>
+                        <img src="{% static 'home_app/img/PlaneR.png' %}">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
+
 
 
 {% block scripts %}

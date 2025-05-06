@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+Головна сторінка
+{% endblock %}
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'home_app/css/home.css' %}">
+{% endblock %}
+
+{% block main %}
+<div class="content">
+    <aside class="fixed-left-panel">
+        <div class="user-profile">
+            <div class="user-profile-main-info">
+                <img class="user-profile-photo" src="{% static 'home_app/img/UserPhoto.png' %}">
+                <div class="user-profile-username">
+                    <p class="user-profile-name">Lina Li</p>
+                    <p class="user-profile-called-as">@thelili</p>
+                </div>
+            </div>
+            <div class="user-profile-social-stats">
+                <div class="user-profile-social-stat-div" >
+                    <p class="user-profile-social-stat-publics-count user-profile-social-stat-count" id="user-profile-social-stat-publics-count">566</p>
+                    <p class="user-profile-social-stat-name">Дописи</p>
+                </div>
+                <div class="user-profile-social-stat-div" >
+                    <p class="user-profile-social-stat-followers-count user-profile-social-stat-count">12.1K</p>
+                    <p class="user-profile-social-stat-name">Читачі</p>
+                </div>
+                <div class="user-profile-social-stat-div">
+                    <p class="user-profile-social-stat-friends-count user-profile-social-stat-count">222</p>
+                    <p class="user-profile-social-stat-name">Друзі</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+</div>
+{% endblock %}
+
+
+{% block scripts %}
+<script src="{% static 'home_app/js/home.js' %}"></script>
+{% endblock %}

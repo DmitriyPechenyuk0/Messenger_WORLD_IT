@@ -20,10 +20,14 @@ from django.urls import path
 from . import settings
 from authorization_app.views import AuthorizationView
 from registration_app.views import RegistrationView
+from home_app.views import HomeView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('registration/', RegistrationView.as_view()),
-    path('authorization/', AuthorizationView.as_view())]
+    path('authorization/', AuthorizationView.as_view()),
+    path('', HomeView.as_view()),
+    
+    ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

@@ -2,7 +2,7 @@
 {% block main %}
  <form method="post">
     {% csrf_token %}
-    {{ auth_form.as_div }}
+    {{ form.as_div }}
     
     <button type="submit">Submit</button>
  </form>

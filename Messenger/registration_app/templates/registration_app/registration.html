@@ -3,7 +3,6 @@
 {% load static %}
 
 {% block main %}
-{{ success }}
 <form action="" id="form" method="post">
     {% csrf_token %}
     {{ form.as_div }}

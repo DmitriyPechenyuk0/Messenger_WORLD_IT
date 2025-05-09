@@ -18,6 +18,7 @@ class RegistrationView(View):
         })
     def post(self, request: HttpRequest):
         button = request.POST.get('submitform')
+        print(button)
         if button == 'mainform':
             form = RegistrationForm(request.POST)
             if form.is_valid():
@@ -56,10 +57,10 @@ class RegistrationView(View):
             if form.is_valid():
                 email = request.COOKIES.get('email')
                 print(email, RegistrationCodes.objects.filter(email=email).exists())
-                if email != None and RegistrationCodes.objects.filter(email=email).exists() == True:
-                    auth_code = request.COOKIES.get('password')
+                if User.objects.filter(username=email).exists() == False:
+                    auth_code = RegistrationCodes.objects.get(email=email).code
                     entered_code = form.cleaned_data['code']
-                    print('True True True')
+                    print(auth_code, entered_code)
                     if entered_code == auth_code:
                         password = request.COOKIES.get('password')
                         print('User Created')
@@ -67,8 +68,7 @@ class RegistrationView(View):
 
                         response = render(request, 'registration_app/registration.html', {
                                 'form': RegistrationForm(),
-                                'codeform': CodeForm,
-                                'success': 'successed'})
+                                'codeform': CodeForm})
 
                         response.delete_cookie('email')
                         response.delete_cookie('password')

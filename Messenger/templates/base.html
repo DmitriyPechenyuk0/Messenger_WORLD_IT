@@ -8,20 +8,31 @@
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
     </head>
     <body>
+        
         <div class="header-div" >
+            {% if page == 'home' %}
+                <header class="space-between" >
+                    <a href="/"><img class="logo" src="{% static 'img/Logo.png' %}"></a>
+                    
+                    <div class="links">
+                        <nav class="inside-links">
+                            <a class="link" href=""><img class="link-picture" src="{% static 'img/House.png' %}"><p>Головна</p></a>
+                            <a class="link" href=""><img class="link-picture" src="{% static 'img/mypub.png' %}"><p>Мої публікації</p></a>
+                            <a class="link" href=""><img class="link-picture" src="{% static 'img/people.png' %}"><p>Друзі</p></a>
+                            <a class="link" href=""><img class="link-picture" src="{% static 'img/chat.png' %}"><p>Чати</p></a>
+                            <a class="link" href=""><img class="link-picture" src="{% static 'img/Setting.png' %}"><p>Налаштування</p></a>
+                        </nav>
+                        <form action="{% url 'logout' %}?next=/" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="link-log-out"><img src="{% static 'img/exit.png' %}"><p>Вихід</p></button>
+                        </form>
+                    </div>
+                </header>
+            {% elif page == 'reg' %}
             <header>
-                <img class="logo" src="{% static 'img/Logo.png' %}">
-                <div class="links">
-                    <nav class="inside-links">
-                        <a class="link" href=""><img class="link-picture" src="{% static 'img/House.png' %}"><p>Головна</p></a>
-                        <a class="link" href=""><img class="link-picture" src="{% static 'img/mypub.png' %}"><p>Мої публікації</p></a>
-                        <a class="link" href=""><img class="link-picture" src="{% static 'img/people.png' %}"><p>Друзі</p></a>
-                        <a class="link" href=""><img class="link-picture" src="{% static 'img/chat.png' %}"><p>Чати</p></a>
-                        <a class="link" href=""><img class="link-picture" src="{% static 'img/Setting.png' %}"><p>Налаштування</p></a>
-                    </nav>
-                    <a class="link-log-out" href="/log-out"><img src="{% static 'img/exit.png' %}"><p>Вихід</p></a>
-                </div>
+                <a href="/"><img class="logo" src="{% static 'img/Logo.png' %}"></a>
             </header>
+            {% endif %}
         </div>
         <main>
             {% block main %} {% endblock %}

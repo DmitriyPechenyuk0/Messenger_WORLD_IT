@@ -21,7 +21,7 @@ h1{
     align-items: center;
     border-radius: 20px;
     width: 487px;
-    height: 552px;
+    height: 657px;
     background-color: #FFFFFF;
     z-index: 100;
     left: 17.26%;
@@ -154,4 +154,44 @@ h1{
 }
 #password-eye:hover, #confirmation-password-eye:hover{
     cursor: pointer;
+}
+.qr-img img{
+    width: 100px;
+    height: 100px;
+}
+.qr-img{
+    width: 100px;
+    height: 100px;
+}
+.qr-inform{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 142px;
+}
+.qr-inform-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 18px;
+    gap: 16px;
+}
+.qr-title{
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -1%;
+    line-height: 100%;
+    width: 270px;
+    height: 18px;
+}
+.qr-inform-lines{
+    width: 55px;
+    height: 1px;
+    background-color: #81818D;
+
 }

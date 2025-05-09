@@ -1,23 +1,60 @@
 {% extends 'base.html' %}
 
 {% load static %}
+{% block links %}
+    <link rel="stylesheet" href="{% static 'registration_app/css/registration_app.css' %}">
+{% endblock %}
 
 {% block main %}
-<form action="" id="form" method="post">
-    {% csrf_token %}
-    {{ form.as_div }}
-    <button name="submitform" value="mainform" id="submitForm" type="submit">Submit</button>
-</form>
-{% if codeform %}
-<div class="popup" >
-    <form action="" method="post" >
-        {% csrf_token %}
-        {{ codeform.as_div }}
-        <button name="submitform" value="codeform" id="submitCodeForm" type="submit">Submit</button>
-    </form>
+<div class="main-container">
+    <div class="content">
+        <div class="switcher">
+            <div class="tab active-tab ">
+                <p>Реєстрація</p>
+                <div class="active-tab-line"></div>
+            </div>
+            <div class="tab inactive-tab">
+                <a href="/authorization/">Авторизація</a>
+            </div>
+        </div>
+        <h1>Приєднуйся до World IT</h1>
+        <form class="reg-form" id="form" method="post">
+            {% csrf_token %}
+            <div class="reg-form-main" >
+                <div class="reg-form-inputs" >
+                    <label for="email">Електронна пошта</label>
+                    {{ form.email }}
+                </div>
+                <div class="reg-form-inputs">
+                    <label for="password">Пароль</label>
+                    {{ form.password }}
+                    <button type="button" id="password-eye"><img src="{% static 'registration_app/img/eye.png' %}"></button>
+                </div>
+                <div class="reg-form-inputs">
+                    <label for="confirm_password">Підтверди пароль</label>
+                    {{ form.confirm_password }}
+                    <button type="button" id="confirmation-password-eye" ><img src="{% static 'registration_app/img/eye.png' %}"></button>
+                </div>
+            </div>
+            <button name="submitform" value="mainform" id="submitForm" type="submit">Створити акаунт</button>
+        </form>
+        {% if codeform %}
+        <div class="popup" >
+            <form action="" method="post" >
+                {% csrf_token %}
+                {{ codeform.as_div }}
+                <button name="submitform" value="codeform" id="submitCodeForm" type="submit">Підтвердити</button>
+            </form>
+        </div>
+        {% endif %}
+    </div>
+    <img class="back-img" src="{% static 'registration_app/img/background-mac-iphone.png' %}">
 </div>
-{% endif %}
+
 {% endblock %}
+
 {% block scripts %}
+
 <script src="{% static 'registration_app/js/registration_app.js' %}" ></script>
+
 {% endblock %}

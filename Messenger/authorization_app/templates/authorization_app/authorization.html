@@ -1,9 +1,63 @@
 {% extends 'base.html' %}
+
+{% load static %}
+{% block links %}
+    <link rel="stylesheet" href="{% static 'authorization_app/css/authorization.css' %}">
+{% endblock %}
+
 {% block main %}
- <form method="post">
-    {% csrf_token %}
-    {{ form.as_div }}
-    
-    <button type="submit">Submit</button>
- </form>
+<div class="main-container">
+    <div class="content">
+        <div class="switcher">
+            <div class="tab inactive-tab">
+               <a href="/registration">Реєстрація</a>
+            </div>
+            <div class="tab  active-tab">
+               <p>Авторизація</p>
+               <div class="active-tab-line"></div>
+            </div>
+        </div>
+        <h1>Раді тебе знову бачити!</h1>
+        <form class="reg-form" id="form" method="post">
+            {% csrf_token %}
+            <div class="reg-form-main" >
+                <div class="reg-form-inputs" >
+                    <label for="email">Електронна пошта</label>
+                    {{ form.username }}
+                </div>
+                <div class="reg-form-inputs">
+                    <label for="password">Пароль</label>
+                    {{ form.password }}
+                    <button type="button" id="password-eye"><img src="{% static 'registration_app/img/eye.png' %}"></button>
+                </div>
+            </div>
+            <button name="submitform" value="mainform" id="submitForm" type="submit">Увійти</button>
+            <div class="qr-inform">
+               <div class="qr-inform-title">
+                  <div class="qr-inform-lines"></div>
+                  <div class="qr-title">або увійдіть за допомогою QR-коду</div>
+                  <div class="qr-inform-lines"></div>
+               </div>
+               <div class="qr-img"><img src="{% static 'authorization_app/img/qr.png' %}"></div>
+            </div>
+         </form>
+        {% if codeform %}
+        <div class="popup" >
+            <form action="" method="post" >
+                {% csrf_token %}
+                {{ codeform.as_div }}
+                <button name="submitform" value="codeform" id="submitCodeForm" type="submit">Підтвердити</button>
+            </form>
+        </div>
+        {% endif %}
+    </div>
+    <img class="back-img" src="{% static 'registration_app/img/background-mac-iphone.png' %}">
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script src="{% static 'authorization_app/js/authorization.js' %}" ></script>
+
 {% endblock %}

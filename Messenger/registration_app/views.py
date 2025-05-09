@@ -12,9 +12,12 @@ import secrets, string
 # Create your views here.
 
 class RegistrationView(View):
+    
+
     def get(self, request: HttpRequest):
         return render(request, 'registration_app/registration.html', {
-            'form': RegistrationForm()
+            'form': RegistrationForm(),
+            'page' :"reg"
         })
     def post(self, request: HttpRequest):
         button = request.POST.get('submitform')
@@ -48,9 +51,12 @@ class RegistrationView(View):
                     return response
                 else:
                     form.add_error('confirm_password', 'Паролі не співпадають')
-                    return render(request, 'registration_app/registration.html', {'form': RegistrationForm()})
+                    return render(request, 'registration_app/registration.html', {'form': RegistrationForm(),
+                    'page' :"reg"})
             else:
-                return render(request, 'registration_app/registration.html', {'form': RegistrationForm()})
+                return render(request, 'registration_app/registration.html', {
+                    'form': RegistrationForm(),
+                    'page' :"reg"})
         elif button == 'codeform':
             form = CodeForm(request.POST)
             print('add')
@@ -68,7 +74,8 @@ class RegistrationView(View):
 
                         response = render(request, 'registration_app/registration.html', {
                                 'form': RegistrationForm(),
-                                'codeform': CodeForm})
+                                'codeform': CodeForm,
+                                'page' :"reg"})
 
                         response.delete_cookie('email')
                         response.delete_cookie('password')
@@ -76,13 +83,16 @@ class RegistrationView(View):
                     else:
                         return render(request, 'registration_app/registration.html', {
                             'form': RegistrationForm(),
-                            'codeform': CodeForm()})
+                            'codeform': CodeForm(),
+                            'page' :"reg"})
                 else:
                     return render(request, 'registration_app/registration.html', {
                         'form': RegistrationForm(),
-                        'codeform': CodeForm()})
+                        'codeform': CodeForm(),
+                        'page' :"reg"})
             else:
                 form.add_error('confirm_password', 'Паролі не співпадають')
                 return render(request, 'registration_app/registration.html', {
                     'form': RegistrationForm(),
-                    'codeform': CodeForm()})
+                    'codeform': CodeForm(),
+                    'page' :"reg"})

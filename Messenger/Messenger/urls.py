@@ -18,15 +18,16 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 from . import settings
-from authorization_app.views import AuthorizationView
+from authorization_app.views import AuthorizationView, LogoutView
 from registration_app.views import RegistrationView
 from home_app.views import HomeView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('registration/', RegistrationView.as_view()),
-    path('authorization/', AuthorizationView.as_view()),
-    path('', HomeView.as_view()),
+    path(route='registration/', view=RegistrationView.as_view(), name='reg'),
+    path(route='authorization/', view=AuthorizationView.as_view(), name='auth'),
+    path(route='log-out/', view=LogoutView.as_view(), name='logout'),
+    path(route='', view=HomeView.as_view(), name='home' ),
     
     ]
 if settings.DEBUG:

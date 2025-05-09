@@ -361,6 +361,10 @@
     border-radius: 190px;
     width: 40px;
     height: 40px;
+    transition: 550ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.fast-message-content-button:hover{
+    background-color: #E9E5EE;
 }
 .fast-message-content-button img{
     width: 20px;

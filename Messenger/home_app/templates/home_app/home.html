@@ -12,12 +12,17 @@
 
 {% block main %}
 <div class="content">
+
     <aside class="fixed-left-panel">
         <div class="user-profile">
             <div class="user-profile-main-info">
                 <img class="user-profile-photo" src="{% static 'home_app/img/UserPhoto.png' %}">
                 <div class="user-profile-username">
-                    <p class="user-profile-name">Lina Li</p>
+                    {% if request.user.is_authenticated %}
+                        <p class="user-profile-name">{{ request.user.username }}</p>
+                    {% else %}
+                        <p class="user-profile-name">Lina Li</p>
+                    {% endif %}
                     <p class="user-profile-called-as">@thelili</p>
                 </div>
             </div>

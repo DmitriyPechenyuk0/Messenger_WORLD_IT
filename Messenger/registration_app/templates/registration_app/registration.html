@@ -1,10 +1,24 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block main %}
-<form action="" method="post">
+{{ success }}
+<form action="" id="form" method="post">
     {% csrf_token %}
     {{ form.as_div }}
-    <button type="submit">Submit</button>
+    <button name="submitform" value="mainform" id="submitForm" type="submit">Submit</button>
 </form>
-
+{% if codeform %}
+<div class="popup" >
+    <form action="" method="post" >
+        {% csrf_token %}
+        {{ codeform.as_div }}
+        <button name="submitform" value="codeform" id="submitCodeForm" type="submit">Submit</button>
+    </form>
+</div>
+{% endif %}
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'registration_app/js/registration_app.js' %}" ></script>
 {% endblock %}

@@ -8,4 +8,3 @@ from .forms import AuthorizationForm
 class AuthorizationView(FormView):
     template_name = "authorization_app/authorization.html"
     form_class = AuthorizationForm
-    

@@ -45,6 +45,15 @@ INSTALLED_APPS = [
     'home_app',
 ]
 
+ASGI_APPLICATION = 'Messenger.asgi.application'
+
+# Створюємо канал для обміну данних між користувачами 
+CHANNEL_LAYERS = {
+    'default': { # Задаємо канал за замовчуванням
+        'BACKEND': 'channels.layers.InMemoryChannelLayer' # Вказуємо унікальний індетифікатор для каналу
+    }
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -75,8 +84,6 @@ TEMPLATES = [
         },
     },
 ]
-ASGI_APPLICATION = 'Messenger.asgi.application'
-
 WSGI_APPLICATION = 'Messenger.wsgi.application'
 
 
